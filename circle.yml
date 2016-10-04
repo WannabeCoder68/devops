@@ -23,5 +23,5 @@ deployment:
   master:
     branch: master
     commands:
-      - docker login -u kevinsimper -p $DOCKER_PASSWORD -e kevin.simper@gmail.com
+      - docker login -u liambutler87 -p $DOCKER_PASSWORD -e kevin.simper@gmail.com
       - npm run deploy
