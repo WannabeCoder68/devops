@@ -10,12 +10,7 @@ dependencies:
     - "~/docker"
     - "node_modules"
   override:
-    - docker pull node:6.3
-    - mkdir -p ~/docker
-    - if [[ -e ~/docker/cyclesdk_web.tar ]]; then docker load -i ~/docker/cyclesdk_web.tar; fi
-    - docker run -it --workdir /app -v $(pwd):/app node:6.3 npm install
     - docker-compose build
-    - docker save "devops_web" > ~/docker/devops_web.tar
 test:
   override:
     - echo "no test"
@@ -24,4 +19,5 @@ deployment:
     branch: master
     commands:
       - docker login -u liambutler87 -p $DOCKER_PASSWORD -e kevin.simper@gmail.com
-      - npm run deploy
+      - docker tag devops_web liambutler87/devops
+      - docker push
