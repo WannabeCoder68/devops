@@ -15,7 +15,7 @@ dependencies:
     - if [[ -e ~/docker/cyclesdk_web.tar ]]; then docker load -i ~/docker/cyclesdk_web.tar; fi
     - docker run -it --workdir /app -v $(pwd):/app node:6.3 npm install
     - docker-compose build
-    - docker save "cyclesdk_web" > ~/docker/cyclesdk_web.tar
+    - docker save "devops_web" > ~/docker/devops_web.tar
 test:
   override:
     - echo "no test"
