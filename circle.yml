@@ -20,4 +20,4 @@ deployment:
     commands:
       - docker login -u liambutler87 -p $DOCKER_PASSWORD -e kevin.simper@gmail.com
       - docker tag devops_web liambutler87/devops
-      - docker push
+      - docker push liambutler87/devops
